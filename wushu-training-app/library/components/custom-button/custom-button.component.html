@@ -1,6 +1,7 @@
 <button
   type="{{ type }}"
-  class="px-8 py-6 bg-slate-50 rounded-3xl text-2xl text-slate-50 font-bold bg-gradient-to-r from-cyan-500 to-blue-500"
+  class="bg-slate-50 text-slate-50 font-bold bg-gradient-to-r from-cyan-500 to-blue-500"
+  [ngClass]="customization"
 >
   {{ text }}
 </button>

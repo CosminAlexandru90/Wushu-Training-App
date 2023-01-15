@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { LibraryComponent } from './library/library.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
@@ -15,7 +14,10 @@ const routes: Routes = [
   },
   {
     path: 'library',
-    component: LibraryComponent,
+    loadChildren: () =>
+      import('./library-presentation/library-presentation.module').then(
+        (m) => m.LibraryPresentationModule
+      ),
   },
   {
     path: '',
