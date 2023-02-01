@@ -13,15 +13,13 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'library',
-    loadChildren: () =>
-      import('./library-presentation/library-presentation.module').then(
-        (m) => m.LibraryPresentationModule
-      ),
-  },
-  {
     path: '',
     redirectTo: 'welcome',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
 ];
